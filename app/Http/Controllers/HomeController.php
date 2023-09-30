@@ -211,10 +211,10 @@ class HomeController extends Controller
             "is_paid"=>true,
             "status"=> Order::CONFIRMED
         ]); // cập nhật trạng thái trả tiền
-        return view("pages.thank-you",compact("order"));
+        return redirect()->to("thank-you/$order->id");
     }
     public function paypalCancel(Order $order){
-
+        return redirect()->to("thank-you/$order->id");
     }
 
 
